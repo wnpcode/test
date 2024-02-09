@@ -17,6 +17,9 @@ const Home = lazy(() => import("@/pages/dashboard/home"));
 const NotificationList = lazy(() => import("@/pages/dashboard/notification"));
 const CategoryList = lazy(() => import("@/pages/dashboard/category/category"));
 const Product = lazy(() => import("@/pages/dashboard/pos/pos"));
+const DetailProduct = lazy(() =>
+  import("@/pages/dashboard/product/detail-product")
+);
 const EditProduct = lazy(() =>
   import("@/pages/dashboard/product/edit-product")
 );
@@ -26,6 +29,7 @@ const DetailReport = lazy(() =>
   import("@/pages/dashboard/report/detail-report")
 );
 const ReportList = lazy(() => import("@/pages/dashboard/report/report"));
+const AddRole = lazy(() => import("@/pages/dashboard/user/add-role"));
 const AddUser = lazy(() => import("@/pages/dashboard/user/add-user"));
 const EditUser = lazy(() => import("@/pages/dashboard/user/edit-user"));
 const UserList = lazy(() => import("@/pages/dashboard/user/user"));
@@ -115,6 +119,14 @@ export const routes = [
       {
         path: "/product/edit/:id",
         element: <EditProduct />,
+        collapse: false,
+        badge: false,
+        accessRole: "",
+        child: [],
+      },
+      {
+        path: "/user/role/add",
+        element: <AddRole />,
         collapse: false,
         badge: false,
         accessRole: "",
